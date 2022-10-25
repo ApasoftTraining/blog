@@ -2,6 +2,8 @@ FROM centos/python-36-centos7:latest
 
 USER root
 
+RUN satellite-maintain upgrade run --target-version 6.11.z
+
 COPY . /tmp/src
 
 RUN mv /tmp/src/.s2i/bin /tmp/scripts
